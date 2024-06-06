@@ -6,6 +6,7 @@ export USE_CCACHE=1
 ccache -M 100G
 ccache -o compression=true
 ccache -z
+git clone https://github.com/opudon/hardware_dolby -b 14 hardware/dolby
 . build/envsetup.sh
 lunch "$LUNCH_COMBO"
 rise $TARGET
