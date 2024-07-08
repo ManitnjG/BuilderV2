@@ -8,7 +8,7 @@ repo init --depth=1 -u $MANIFEST
 git clone $LOCAL_MANIFEST .repo/local_manifests
 repo sync -c --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j$(nproc --all)
 }
-git clone https://github.com/opudon/hardware_dolby -b 14 hardware/dolby
+
 echo "Syncing Rom and Device Sources..."
 sync
 echo "Syncing"
