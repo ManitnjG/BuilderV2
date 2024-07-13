@@ -2,12 +2,13 @@
 sync() {
 mkdir -p ~/work
 cd ~/work
-rm -rf .repo/local_manifests
+
 git config --global user.name "Shravan55555"
 git config --global user.email "srasidda.ks@gmail.com"
 repo init --depth=1 -u $MANIFEST
 git clone $LOCAL_MANIFEST .repo/local_manifests
-repo sync 
+repo sync -c --no-clone-bundle --optimized-fetch --prune --force-sync -j$(nproc --all)
+
 }
 
 echo "Syncing Rom and Device Sources..."
